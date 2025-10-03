@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>East Valley Youth Help & Mentors Hub</title>
+  <meta name="description" content="A simple, service-first directory for Gilbert & East Valley families: immediate help, mentoring, tutoring, and volunteer opportunities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    .glass { backdrop-filter: blur(8px); background-color: rgba(255,255,255,0.7); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-2xl bg-emerald-500 grid place-content-center text-white font-extrabold">EV</div>
+        <span class="font-bold">East Valley Youth Help & Mentors Hub</span>
+      </a>
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="#help" class="hover:text-emerald-600">Get Help Now</a>
+        <a href="#mentor" class="hover:text-emerald-600">Mentors & Programs</a>
+        <a href="#tutor" class="hover:text-emerald-600">Tutoring & STEM</a>
+        <a href="#volunteer" class="hover:text-emerald-600">Volunteer Today</a>
+        <a href="#events" class="hover:text-emerald-600">Events</a>
+        <a href="#about" class="hover:text-emerald-600">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-100 via-white to-sky-100"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">Serve families. Mentor teens. <span class="text-emerald-600">Build hope in Gilbert.</span></h1>
+        <p class="mt-5 text-lg text-slate-700">A simple, nonpartisan hub to connect you with immediate help, mentoring, tutoring, and family‑friendly service across the East Valley.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#help" class="px-5 py-3 rounded-xl bg-emerald-600 text-white font-semibold shadow hover:bg-emerald-700">Get Help Now</a>
+          <a href="#volunteer" class="px-5 py-3 rounded-xl bg-white text-emerald-700 font-semibold shadow ring-1 ring-emerald-600/20 hover:ring-emerald-600/40">Volunteer Today</a>
+        </div>
+        <p class="mt-4 text-xs text-slate-500">Maintained by community volunteers. Links go to official organizations.</p>
+      </div>
+      <div class="lg:pl-10">
+        <div class="glass rounded-3xl shadow-lg p-6">
+          <h2 class="text-xl font-bold mb-4">This week’s quick actions</h2>
+          <ul id="quick-actions" class="space-y-3 text-sm"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Help Now -->
+  <section id="help" class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-6 mb-8">
+        <div>
+          <h2 class="text-2xl font-extrabold">Get Help Now</h2>
+          <p class="text-slate-600">Direct links to immediate food and support resources in the East Valley.</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- United Food Bank -->
+        <a href="https://unitedfoodbank.org/" target="_blank" class="block p-5 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-200 shadow-sm">
+          <h3 class="font-bold">United Food Bank (Mesa)</h3>
+          <p class="text-sm text-slate-600">Emergency food assistance; pantry & distributions serving East Valley families.</p>
+          <p class="mt-2 text-xs text-emerald-700">unitedfoodbank.org</p>
+        </a>
+        <!-- Paz de Cristo -->
+        <a href="https://pazdecristo.org/get-dinner/" target="_blank" class="block p-5 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-200 shadow-sm">
+          <h3 class="font-bold">Paz de Cristo (Mesa) — Nightly Dinner</h3>
+          <p class="text-sm text-slate-600">Fresh, hot meal served nightly; dine‑in or to‑go at 424 W Broadway Rd.</p>
+          <p class="mt-2 text-xs text-emerald-700">pazdecristo.org/get-dinner</p>
+        </a>
+        <!-- Maricopa Libraries -->
+        <a href="https://mcldaz.org/en-US/southeast/" target="_blank" class="block p-5 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-200 shadow-sm">
+          <h3 class="font-bold">Southeast Regional Library (Gilbert)</h3>
+          <p class="text-sm text-slate-600">Free study spaces, Wi‑Fi, kids & teen programs, overlooks the Riparian Preserve.</p>
+          <p class="mt-2 text-xs text-emerald-700">mcldaz.org/en‑US/southeast</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mentors & Programs -->
+  <section id="mentor" class="py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-extrabold mb-2">Mentors & Youth Programs</h2>
+      <p class="text-slate-600 mb-8">High‑impact programs in Gilbert & the East Valley that welcome caring adults.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- BGCAZ Gilbert Branch -->
+        <a href="https://www.bgcaz.org/club/gilbert-branch-us-west-teen-center/" target="_blank" class="block p-5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 shadow-sm">
+          <h3 class="font-bold">Boys & Girls Clubs of the Valley — Gilbert Branch</h3>
+          <p class="text-sm text-slate-600">After‑school programs, homework help, youth sports; volunteer (18+, background check).</p>
+          <p class="mt-2 text-xs text-emerald-700">bgcaz.org/club/gilbert-branch…</p>
+        </a>
+        <!-- Gilbert Chamber Foundation Mentorship -->
+        <a href="https://gilbertaz.com/foundation-programs" target="_blank" class="block p-5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 shadow-sm">
+          <h3 class="font-bold">Gilbert Chamber Foundation — Student Mentorship & SEA</h3>
+          <p class="text-sm text-slate-600">Mentor students, judge pitch sessions, support entrepreneurship & career readiness.</p>
+          <p class="mt-2 text-xs text-emerald-700">gilbertaz.com/foundation‑programs</p>
+        </a>
+        <!-- Town Boards/Mayor's Youth -->
+        <a href="https://www.gilbertaz.gov/how-do-i/volunteer" target="_blank" class="block p-5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 shadow-sm">
+          <h3 class="font-bold">Town of Gilbert — Volunteer & Youth Opportunities</h3>
+          <p class="text-sm text-slate-600">Create a Better Impact profile; explore Parks & Rec, Police/Fire, Mayor’s Youth, events.</p>
+          <p class="mt-2 text-xs text-emerald-700">gilbertaz.gov/how‑do‑i/volunteer</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tutoring & STEM -->
+  <section id="tutor" class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-3 gap-10 items-start">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl font-extrabold mb-2">Tutoring & STEM Corner</h2>
+          <p class="text-slate-600 mb-6">Free or low‑cost learning supports. Host your own weekly STEM help hour—see toolkit below.</p>
+          <div class="grid md:grid-cols-2 gap-6">
+            <a href="https://mcldaz.org/en-US/southeast/" target="_blank" class="block p-5 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-200 shadow-sm">
+              <h3 class="font-bold">Study @ Southeast Regional Library</h3>
+              <p class="text-sm text-slate-600">Quiet space, youth rooms, and community events; adjacent to Riparian Preserve.</p>
+              <p class="mt-2 text-xs text-emerald-700">mcldaz.org/en‑US/southeast</p>
+            </a>
+            <a href="mailto:eastvalleyyouth@gmail.com" class="block p-5 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-200 shadow-sm">
+              <h3 class="font-bold">Offer Free Tutoring (Volunteer Sign‑Up)</h3>
+              <p class="text-sm text-slate-600">Have STEM/reading skills? Pledge a weekly hour—virtual or at a library.</p>
+              <p class="mt-2 text-xs text-emerald-700">Email to get started</p>
+            </a>
+          </div>
+
+          <div class="mt-8 p-6 rounded-2xl bg-slate-50 border border-slate-200">
+            <h3 class="font-semibold">Host‑Your‑Own Tutoring Hour (Toolkit)</h3>
+            <ol class="list-decimal pl-5 mt-3 space-y-2 text-sm text-slate-700">
+              <li>Pick a weekly slot (e.g., Tue 6–7p) and location (library study room or Zoom).</li>
+              <li>Focus: homework help + fundamentals (fractions/decimals, algebra basics, reading fluency).</li>
+              <li>Bring: whiteboard, simple manipulatives, scratch paper; keep it upbeat and encouraging.</li>
+              <li>Promote: share the Events link below; invite parents via church/community groups.</li>
+              <li>Safety: never 1:1 in closed spaces; keep sessions visible and adhere to site rules.</li>
+            </ol>
+          </div>
+        </div>
+        <aside class="lg:col-span-1 p-6 rounded-2xl bg-emerald-50 border border-emerald-200">
+          <h3 class="font-bold">Faith‑Friendly Service Ideas</h3>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li>• Sponsor a weekly homework & pizza night at church for teens.</li>
+            <li>• Start a coding club (micro‑projects in Python/robotics) for grades 6–10.</li>
+            <li>• Pair mentors with Boys & Girls Club teens on resume & interview basics.</li>
+            <li>• Organize Saturday nature cleanups at the Riparian Preserve with families.</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteer Today -->
+  <section id="volunteer" class="py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-extrabold mb-2">Volunteer Today — Quick‑Join Links</h2>
+      <p class="text-slate-600 mb-8">Reserve a spot, show up, and serve. Great for families and small groups.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="https://unitedfoodbank.org/volunteer/" target="_blank" class="block p-5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 shadow-sm">
+          <h3 class="font-bold">United Food Bank — Volunteer</h3>
+          <p class="text-sm text-slate-600">Sort/box food; emergency bags; frequent shifts in Mesa.</p>
+          <p class="mt-2 text-xs text-emerald-700">unitedfoodbank.org/volunteer</p>
+        </a>
+        <a href="https://www.fmsc.org/get-involved/volunteer" target="_blank" class="block p-5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 shadow-sm">
+          <h3 class="font-bold">Feed My Starving Children — Pack Meals</h3>
+          <p class="text-sm text-slate-600">2‑hour packing sessions; reserve online.</p>
+          <p class="mt-2 text-xs text-emerald-700">fmsc.org/get‑involved/volunteer</p>
+        </a>
+        <a href="https://pazdecristo.org/get-involved/volunteer-2/" target="_blank" class="block p-5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 shadow-sm">
+          <h3 class="font-bold">Paz de Cristo — Evening Meal Teams</h3>
+          <p class="text-sm text-slate-600">Prep/serve nightly meals; easy on‑ramp for first‑time volunteers.</p>
+          <p class="mt-2 text-xs text-emerald-700">pazdecristo.org/get‑involved/volunteer‑2</p>
+        </a>
+        <a href="https://app.betterimpact.com/PublicEnterprise/bbe8c32a-b15c-4d80-8d48-f1f3bfe3fed6" target="_blank" class="block p-5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 shadow-sm">
+          <h3 class="font-bold">Town of Gilbert — Volunteer Portal</h3>
+          <p class="text-sm text-slate-600">Create an account; browse Parks & Rec, Police/Fire, event roles.</p>
+          <p class="mt-2 text-xs text-emerald-700">Better Impact</p>
+        </a>
+        <a href="https://www.gilbertaz.gov/departments/parks-and-recreation/riparian-preserve-at-water-ranch/volunteer-information" target="_blank" class="block p-5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 shadow-sm">
+          <h3 class="font-bold">Riparian Preserve — Volunteer Info</h3>
+          <p class="text-sm text-slate-600">One‑time projects & education support; family‑friendly service.</p>
+          <p class="mt-2 text-xs text-emerald-700">gilbertaz.gov / Riparian Preserve</p>
+        </a>
+        <a href="https://www.bgcaz.org/volunteer/" target="_blank" class="block p-5 rounded-2xl bg-white hover:bg-slate-50 border border-slate-200 shadow-sm">
+          <h3 class="font-bold">Boys & Girls Clubs of the Valley — Volunteer</h3>
+          <p class="text-sm text-slate-600">Club & event roles; background check required (18+).</p>
+          <p class="mt-2 text-xs text-emerald-700">bgcaz.org/volunteer</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events (simple JSON-fed list you can edit) -->
+  <section id="events" class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-6 mb-6">
+        <div>
+          <h2 class="text-2xl font-extrabold">Community Events & Serve Opportunities</h2>
+          <p class="text-slate-600">Maintained by volunteers. Click any item to learn more or RSVP.</p>
+        </div>
+        <a href="mailto:eastvalleyyouth@gmail.com?subject=Add%20Event" class="text-sm font-semibold text-emerald-700 hover:text-emerald-800">Submit an event →</a>
+      </div>
+      <div id="events-list" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-16 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-extrabold">About this project</h2>
+      <p class="mt-3 text-slate-700">This hub is a simple, volunteer‑run directory to help families and caring adults in Gilbert and the East Valley find practical ways to get help, give help, and mentor youth. It’s nonpartisan and focused on service. You’re free to share or fork this site.</p>
+      <div class="mt-6 p-6 rounded-2xl bg-white border border-slate-200">
+        <h3 class="font-semibold">Ways to contribute</h3>
+        <ul class="list-disc pl-5 mt-2 space-y-1 text-sm text-slate-700">
+          <li>Send corrections or new links (email below).</li>
+          <li>Adopt a section (keep one group of links fresh each month).</li>
+          <li>Host a weekly tutoring hour or mentor meetup and add it to Events.</li>
+        </ul>
+        <p class="mt-4 text-sm">Contact: <a class="text-emerald-700 font-medium" href="mailto:hello@eastvalleyyouth.org">hello@eastvalleyyouth.org</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-slate-500 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> East Valley Youth Help & Mentors Hub • Gilbert, AZ</p>
+      <p><span class="font-semibold text-slate-700">Give glory to God.</span> Love your neighbor. Serve the vulnerable.</p>
+    </div>
+  </footer>
+
+  <script>
+    // --- Data you can edit (no build tools needed) ---
+    const quickActions = [
+      {
+        title: "Serve dinner tonight at Paz de Cristo",
+        href: "https://pazdecristo.org/get-involved/volunteer-2/",
+        blurb: "Prep/serve a hot meal — nightly in Mesa.",
+      },
+      {
+        title: "Pack meals at Feed My Starving Children",
+        href: "https://www.fmsc.org/get-involved/volunteer",
+        blurb: "Reserve a 2‑hour packing shift (Mesa site).",
+      },
+      {
+        title: "Sort food with United Food Bank",
+        href: "https://unitedfoodbank.org/volunteer/",
+        blurb: "High‑impact warehouse shifts; family‑friendly.",
+      },
+      {
+        title: "Create a Town of Gilbert volunteer profile",
+        href: "https://www.gilbertaz.gov/how-do-i/volunteer",
+        blurb: "Browse Parks & Rec, Police/Fire, Mayor’s Youth.",
+      },
+      {
+        title: "Mentor a student via Gilbert Chamber Foundation",
+        href: "https://gilbertaz.com/foundation-programs",
+        blurb: "Support entrepreneurship & career readiness.",
+      },
+    ];
+
+    const events = [
+      {
+        org: "United Food Bank (Mesa)",
+        date: "Rolling dates",
+        title: "Sorting & Emergency Food Bags",
+        href: "https://unitedfoodbank.org/events/",
+      },
+      {
+        org: "Feed My Starving Children (Mesa)",
+        date: "Daily sessions",
+        title: "2‑Hour Meal Packing Shifts",
+        href: "https://www.fmsc.org/get-involved/volunteer-info",
+      },
+      {
+        org: "Paz de Cristo (Mesa)",
+        date: "Nightly",
+        title: "Evening Meal — Volunteer Teams",
+        href: "https://pazdecristo.org/get-involved/evening-meal/",
+      },
+      {
+        org: "Town of Gilbert Parks & Rec",
+        date: "Seasonal / one‑time",
+        title: "Riparian Preserve Projects",
+        href: "https://www.gilbertaz.gov/departments/parks-and-recreation/riparian-preserve-at-water-ranch/volunteer-information",
+      },
+      {
+        org: "Boys & Girls Clubs of the Valley",
+        date: "Weekdays after school",
+        title: "Homework Help & Mentoring (Gilbert Branch)",
+        href: "https://www.bgcaz.org/club/gilbert-branch-us-west-teen-center/",
+      },
+      {
+        org: "Gilbert Chamber Foundation",
+        date: "Cohorts during school year",
+        title: "Student Entrepreneurs Academy — Mentors",
+        href: "https://gilbertaz.com/foundation-programs",
+      },
+    ];
+
+    // --- Renderers ---
+    const qaEl = document.querySelector('#quick-actions');
+    quickActions.forEach(a => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <a href="${a.href}" target="_blank" class="group flex items-start gap-3 p-3 rounded-xl border border-slate-200 hover:border-emerald-300 hover:bg-white shadow-sm">
+          <div class="mt-1 w-2 h-2 rounded-full bg-emerald-500"></div>
+          <div>
+            <p class="font-semibold group-hover:text-emerald-700">${a.title}</p>
+            <p class="text-slate-600 text-sm">${a.blurb}</p>
+          </div>
+        </a>`;
+      qaEl.appendChild(li);
+    });
+
+    const evEl = document.querySelector('#events-list');
+    events.forEach(e => {
+      const card = document.createElement('a');
+      card.href = e.href; card.target = '_blank';
+      card.className = 'block p-5 rounded-2xl bg-slate-50 hover:bg-slate-100 border border-slate-200 shadow-sm';
+      card.innerHTML = `
+        <div class="text-xs text-slate-500">${e.org} • <span class="font-medium text-slate-700">${e.date}</span></div>
+        <div class="mt-1 font-bold">${e.title}</div>
+        <div class="mt-2 text-xs text-emerald-700">Learn more</div>`;
+      evEl.appendChild(card);
+    });
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

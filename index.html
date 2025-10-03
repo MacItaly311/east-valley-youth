@@ -15,11 +15,47 @@
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
+  <!-- Inline logo symbols -->
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="hidden">
+    <!-- Sunrise Path logo -->
+    <symbol id="logo-sunrise" viewBox="0 0 64 64">
+      <!-- Sun (semi-arc) -->
+      <path d="M20 28 A12 12 0 0 1 44 28" fill="none" stroke="#F59E0B" stroke-width="6" stroke-linecap="round"/>
+      <!-- Rays -->
+      <path d="M32 8 L32 16" stroke="#FBBF24" stroke-width="4" stroke-linecap="round"/>
+      <path d="M22 12 L26 18" stroke="#FBBF24" stroke-width="4" stroke-linecap="round"/>
+      <path d="M42 12 L38 18" stroke="#FBBF24" stroke-width="4" stroke-linecap="round"/>
+      <!-- Path to horizon -->
+      <path d="M10 56 C 20 48, 28 44, 32 36 C 36 28, 44 28, 54 28" fill="none" stroke="#059669" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- EV Heart-Pin logo -->
+    <symbol id="logo-evpin" viewBox="0 0 64 64">
+      <!-- Pin silhouette -->
+      <path d="M32 6a14 14 0 0 0-14 14c0 10.5 14 28 14 28s14-17.5 14-28A14 14 0 0 0 32 6z" fill="#059669"/>
+      <!-- Heart cutout -->
+      <path d="M32 19c-3 0-5 2.4-5 5.1 0 4.6 5 7.9 5 7.9s5-3.3 5-7.9C37 21.4 35 19 32 19z" fill="#FFFFFF"/>
+    </symbol>
+    <!-- Water Ripples logo -->
+    <symbol id="logo-ripples" viewBox="0 0 64 64">
+      <!-- Crisp vector that matches the small icon -->
+      <!-- Droplet -->
+      <path d="M32 14 C28 20 26 22 26 25 a6 6 0 1 0 12 0 C38 22 36 20 32 14 Z" fill="#7C3AED"/>
+      <!-- Ripples (top to bottom: emerald, diamond, topaz) -->
+      <path d="M16 38 A16 8 0 0 0 48 38" fill="none" stroke="#059669" stroke-width="3.8" stroke-linecap="round"/>
+      <path d="M13 44 A19 9 0 0 0 51 44" fill="none" stroke="#7DD3FC" stroke-width="3.2" stroke-linecap="round"/>
+      <path d="M10 50 A22 10 0 0 0 54 50" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+  </svg>
   <!-- Header -->
   <header class="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-2xl bg-emerald-500 grid place-content-center text-white font-extrabold">EV</div>
+        <div class="w-9 h-9 grid place-content-center rounded-2xl bg-white">
+  <svg id="brand-logo" class="w-9 h-9" viewBox="0 0 64 64" role="img" aria-label="East Valley Youth logo">
+    <use href="#logo-ripples"></use>
+  </svg>
+</div>
         <span class="font-bold">East Valley Youth Help & Mentors Hub</span>
       </a>
       <nav class="hidden md:flex gap-6 text-sm font-medium">
@@ -38,8 +74,9 @@
     <div class="absolute inset-0 bg-gradient-to-br from-emerald-100 via-white to-sky-100"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
       <div>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">Serve families. Mentor teens. <span class="text-emerald-600">Build hope in Gilbert.</span></h1>
-        <p class="mt-5 text-lg text-slate-700">A simple, nonpartisan hub to connect you with immediate help, mentoring, tutoring, and family‑friendly service across the East Valley.</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-slate-900" style="font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji'">Serve families. Mentor teens. <span class="text-emerald-600">Build hope in Gilbert.</span></h1>
+        <p class="mt-4 text-lg text-slate-700">A simple, nonpartisan hub to connect you with immediate help, mentoring, tutoring, and family‑friendly service across the East Valley.</p>
+        <h2 class="mt-6 text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 whitespace-nowrap">Help <span class="mx-2 text-black">•</span> Mentor <span class="mx-2 text-black">•</span> Serve</h2>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#help" class="px-5 py-3 rounded-xl bg-emerald-600 text-white font-semibold shadow hover:bg-emerald-700">Get Help Now</a>
           <a href="#volunteer" class="px-5 py-3 rounded-xl bg-white text-emerald-700 font-semibold shadow ring-1 ring-emerald-600/20 hover:ring-emerald-600/40">Volunteer Today</a>
@@ -239,6 +276,17 @@
   </footer>
 
   <script>
+    // Swap logo via URL param: ?logo=ripples or ?logo=evpin or ?logo=sunrise
+    (function(){
+      try {
+        const u = new URL(window.location);
+        const v = (u.searchParams.get('logo')||'').toLowerCase();
+        const use = document.querySelector('#brand-logo use');
+        if (use && (v === 'evpin' || v === 'sunrise' || v === 'ripples')) {
+          use.setAttribute('href', v === 'evpin' ? '#logo-evpin' : (v === 'sunrise' ? '#logo-sunrise' : '#logo-ripples'));
+        }
+      } catch(e) {}
+    })();
     // --- Data you can edit (no build tools needed) ---
     const quickActions = [
       {
